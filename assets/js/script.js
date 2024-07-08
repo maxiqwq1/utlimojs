@@ -25,7 +25,7 @@ document.getElementById('convert').addEventListener('click', async () => {
         const labels = historyData.serie.slice(0, 10).map(item => item.fecha.split('T')[0]).reverse();
         const values = historyData.serie.slice(0, 10).map(item => item.valor).reverse();
 
-        // Crear el gráfico
+        // parte obviamente importante de el grafico
         const ctx = document.getElementById('chart').getContext('2d');
         new Chart(ctx, {
             type: 'line',
@@ -62,3 +62,6 @@ document.getElementById('convert').addEventListener('click', async () => {
         resultDiv.textContent = `Error: ${error.message}`;
     }
 });
+ 
+
+// para terminar no tengo ahora mismo cabeza debido pero me da este error Error: Canvas is already in use. Chart with ID '0' must be destroyed before the canvas with ID 'chart' can be reused. a la hora de cambiar de moneda porfavor si me puedes corregir.
